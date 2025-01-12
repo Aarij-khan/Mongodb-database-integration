@@ -1,15 +1,13 @@
 import mongoose from "mongoose";
-
-// efnyYI5pDubxLOQD
-// dbUri = mongodb+srv://Aarij-admin:<db_password>@cluster0.rec3o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-
-
-const mongoDbUri =
-  "mongodb+srv://Aarij-admin:efnyYI5pDubxLOQD@cluster0.rec3o.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const connectDB = async () => {
+    const MY_SECRET_KEY = process.env.MY_SECRET_KEY;
+    console.log("🚀 ~ MY_SECRET_KEY :", MY_SECRET_KEY )
   try {
-    await mongoose.connect(mongoDbUri);
+    await mongoose.connect(MY_SECRET_KEY);
+    
 
     console.log(`\n🌿 MongoDB connected ! 🍃\n`);
 
@@ -29,6 +27,7 @@ const connectDB = async () => {
     console.error("MONGODB connection FAILED ", error);
     process.exit(1); // Exited with error
   }
+
 };
 
 try {

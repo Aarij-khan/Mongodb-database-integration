@@ -2,8 +2,6 @@ import express from "express";
 import "./db.js"
 import { Product } from "./model.js";
 
-
-
 const app = express();
 const port = 3000;
 app.use(express.json());
