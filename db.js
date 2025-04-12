@@ -4,7 +4,7 @@ dotenv.config();
 
 const connectDB = async () => {
     const MY_SECRET_KEY = process.env.MY_SECRET_KEY;
-    console.log("🚀 ~ MY_SECRET_KEY :", MY_SECRET_KEY )
+    
   try {
     await mongoose.connect(MY_SECRET_KEY);
     
